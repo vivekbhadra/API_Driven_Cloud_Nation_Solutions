@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# Purpose: Generate EDA plots from AWS Glue CSV outputs
+
 import pandas as pd
 import matplotlib.pyplot as plt
 

@@ -40,7 +40,15 @@ print("Data split into training and testing sets.")
 # Step 3: Train Linear Regression and Random Forest Models
 # ------------------------------------------------------
 lr = LinearRegression(featuresCol="features", labelCol="label")
-rf = RandomForestRegressor(featuresCol="features", labelCol="label", numTrees=50)
+#Random forest model with tuned hyperparameters
+rf = RandomForestRegressor(
+    featuresCol="features",
+    labelCol="label",
+    numTrees=100,
+    maxDepth=12,
+    maxBins=32,
+    seed=42
+)
 
 lr_model = lr.fit(train_df)
 rf_model = rf.fit(train_df)

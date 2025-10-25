@@ -79,7 +79,6 @@ for row in rf_predictions.limit(5).collect():
 output_path = "s3://scdf-project-data/models/"
 lr_model.write().overwrite().save(output_path + "linear_regression_model")
 rf_model.write().overwrite().save(output_path + "random_forest_model")
-
 print("Models saved to:", output_path)
 
 # ------------------------------------------------------
